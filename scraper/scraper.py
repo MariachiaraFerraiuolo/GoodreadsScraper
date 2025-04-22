@@ -1,5 +1,5 @@
-from chrome_options import CustomChromeOptions
-from text_cleaning import clean_text
+from src.chrome_options import CustomChromeOptions
+from src.text_cleaning import clean_text
 import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
 from selenium.webdriver.common.by import By
