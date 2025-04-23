@@ -1,4 +1,4 @@
-from src.scraper import GoodreadsScraper
+from scraper.scraper import GoodreadsScraper
 
 
 if __name__ == '__main__':
