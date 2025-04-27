@@ -1,14 +1,14 @@
-from scraper.chrome_options import CustomChromeOptions
-from scraper.text_cleaning import clean_text
 import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
+import time
+import tqdm
+import pandas as pd
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException, NoSuchElementException
 from selenium.webdriver.support.ui import WebDriverWait
-import time
-import tqdm
-import pandas as pd
+from src.scraper.chrome_options import CustomChromeOptions
+from src.scraper.text_cleaning import clean_text
 
 
 class GoodreadsScraper():
@@ -135,9 +135,10 @@ class GoodreadsScraper():
                 })
         return data
  
-    def save_to_excel(self, data, filename):
+    def save_file(self, data, filename):
         df = pd.DataFrame(data)
-        df.to_excel(filename, index=False)
+        df.to_csv(f'{filename}.csv',sep='|', encoding='utf-8', index=False)
+        df.to_excel(f'{filename}.xlsx', index=False)
         print(f"Data saved to {filename}")
 
 
