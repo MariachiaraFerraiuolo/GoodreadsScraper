@@ -7,8 +7,8 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException, NoSuchElementException
 from selenium.webdriver.support.ui import WebDriverWait
-from src.scraper.chrome_options import CustomChromeOptions
-from src.scraper.text_cleaning import clean_text
+from scraper.chrome_options import CustomChromeOptions
+from scraper.text_cleaning import clean_text
 
 
 class GoodreadsScraper():

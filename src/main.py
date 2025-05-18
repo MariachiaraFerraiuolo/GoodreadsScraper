@@ -1,4 +1,4 @@
-from src.scraper.scraper import GoodreadsScraper
+from scraper.scraper import GoodreadsScraper
 
 
 
