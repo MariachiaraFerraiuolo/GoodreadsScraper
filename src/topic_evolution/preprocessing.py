@@ -40,26 +40,11 @@ class Preprocess():
         return self.df
 
     def save(self, output_path):
-        self.df.to_excel(output_path, index=False)  # direct save, no need to call scraper
-
+        self.df.to_excel(output_path, index=False) 
 
 file_path = r'output\cleaned_Goodreads_data.xlsx'
 output_path = r'output\lemmatized_data.xlsx'
 preprocessor = Preprocess(file_path)
 df_processed = preprocessor.preprocessing()
 preprocessor.save(output_path)
-#plots = df['plot']
-#plots = df['plot'].dropna().astype(str)  # drop missing, make sure all are strings
-#print(plots.head())
 
-# preprocessed_plots = df['plot'].apply(preprocess)
-# lemmatized_plots = preprocessed_plots.apply(lemmatize)
-
-# Add the lemmatized plots back to the original dataframe
-
-
-# Save the updated DataFrame (with all columns)
-# df.to_csv(r'output\lemmatized_data.csv', sep='|', encoding='utf-8', index=False)
-# df.to_excel(r'output\lemmatized_data.xlsx', index=False)
-##TODO lemmatize + group by year and genre
-#####something interesting would be to make an llm clean the text without using regex##### 
